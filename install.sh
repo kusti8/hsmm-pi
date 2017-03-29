@@ -124,6 +124,7 @@ fi
 if ! sudo grep "www-data" /etc/sudoers; then
     sudo bash -c "echo 'www-data ALL=(ALL) NOPASSWD: /sbin/iwlist' >> /etc/sudoers"
     sudo bash -c "echo 'www-data ALL=(ALL) NOPASSWD: /sbin/shutdown' >> /etc/sudoers"
+    sudo bash -c "echo 'www-data ALL=(ALL) NOPASSWD: /home/pi/read-only.sh' >> /etc/sudoers"
 fi
 
 # enable apache mod-rewrite
