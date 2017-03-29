@@ -4,7 +4,7 @@ class SystemController extends AppController {
 
 	public function reboot() {
 
-		exec('sudo /sbin/shutdown -r +1');
+		exec('sudo bash /home/pi/read-only.sh && sudo /sbin/shutdown -r +1');
 
 		$this->Flash->success(__('Reboot initiated, please reload this page in 2 minutes.'));
 		$this->redirect(array('controller' => 'status', 'action' => 'index'));
